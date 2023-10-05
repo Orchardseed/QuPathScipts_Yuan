@@ -1,0 +1,5 @@
+WARN: Number of invalid polygons found in Voronoi diagram: 1/25986
+WARN: Number of invalid polygons found in Voronoi diagram: 1/24810
+ERROR: TopologyException: found non-noded intersection between LINESTRING ( 29116 130311.58, 29116 130311.5703125 ) and LINESTRING ( 29116 130311.5703125, 29116 130311.578125 ) [ (29116.0, 130311.5703125, NaN) ]
+
+ERROR: org.locationtech.jts.noding.FastNodingValidator.checkValid(FastNodingValidator.java:139)
