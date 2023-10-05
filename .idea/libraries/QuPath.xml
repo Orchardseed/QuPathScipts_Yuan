@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Qupath">
+  <library name="QuPath">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../QuPath-0.4.4/app" />
       <root url="file://$PROJECT_DIR$/../Extensions-0.4.2/extensions" />
@@ -10,9 +10,9 @@
     </NATIVE>
     <SOURCES>
       <root url="file://$PROJECT_DIR$/../../GitHubReps/qupath/qupath-app/src/main/java" />
-      <root url="file://$PROJECT_DIR$/../../GitHubReps/qupath/qupath-core/src/main/java" />
       <root url="file://$PROJECT_DIR$/../../GitHubReps/qupath/qupath-core-processing/src/main/java" />
       <root url="file://$PROJECT_DIR$/../../GitHubReps/qupath/qupath-extension-processing/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../GitHubReps/qupath/qupath-core/src/main/java" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../Extensions-0.4.2/extensions" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/../QuPath-0.4.4/app" recursive="false" />
