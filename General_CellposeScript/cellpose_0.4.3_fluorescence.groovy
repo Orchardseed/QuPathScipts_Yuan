@@ -25,7 +25,7 @@ def logger = LoggerFactory.getLogger("base script")
 logger.info("The pixelsize is "+originalPixelSize)
 //print(originalPixelSize)
 
-//imageData.setImageType(ImageData.ImageType.FLUORESCENCE)
+imageData.setImageType(ImageData.ImageType.FLUORESCENCE)
 
 // Cell segmentation (Cellpose) Specify the model name (cyto, nuc, cyto2 or a path to your custom model)
 def pathModel = 'path\\to\\your\\model'
