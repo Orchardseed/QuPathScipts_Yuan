@@ -11,8 +11,9 @@ import org.slf4j.LoggerFactory
 def start = new Date()
 def imageData = QP.getCurrentImageData()
 def hierarchy = imageData.getHierarchy()
-def pathObjects = [QP.getSelectedObject()]
-//def pathObjects = hierarchy.getAnnotationObjects()//.findAll{it.getPathClass() == QP.getPathClass("Tissue Bed Predicted")}
+QP.createAnnotationsFromPixelClassifier("Tissue", 10000.0, 100000.0)
+//def pathObjects = [QP.getSelectedObject()]
+def pathObjects = hierarchy.getAnnotationObjects().findAll{it.getPathClass() == QP.getPathClass("Tissue")}
 if (pathObjects.isEmpty()) {
     Dialogs.showErrorMessage("Cellpose", "Please select a parent object!")
     return
