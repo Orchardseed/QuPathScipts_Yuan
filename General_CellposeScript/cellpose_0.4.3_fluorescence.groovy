@@ -23,7 +23,6 @@ def server = imageData.getServer()
 def originalPixelSize = server.getPixelCalibration().getAveragedPixelSizeMicrons()
 def logger = LoggerFactory.getLogger("base script")
 logger.info("The pixelsize is "+originalPixelSize)
-//print(originalPixelSize)
 
 imageData.setImageType(ImageData.ImageType.FLUORESCENCE)
 
