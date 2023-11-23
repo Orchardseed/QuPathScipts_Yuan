@@ -19,8 +19,8 @@ import org.slf4j.LoggerFactory
 def start = new Date()
 def imageData = QP.getCurrentImageData()
 def hierarchy = imageData.getHierarchy()
-//def pathObjects = [QP.getSelectedObject()]
-def pathObjects = hierarchy.getAnnotationObjects()//.findAll{it.getPathClass() == QP.getPathClass("Tissue Bed Predicted")}
+def pathObjects = [QP.getSelectedObject()]
+//def pathObjects = hierarchy.getAnnotationObjects().findAll{it.getPathClass() == QP.getPathClass("Tissue Bed Predicted")}
 if (pathObjects.isEmpty()) {
     Dialogs.showErrorMessage("Cellpose", "Please select a parent object!")
     return
@@ -48,10 +48,10 @@ def cellpose = Cellpose2D.builder(pathModel)
         .normalizePercentiles(1, 99) // Percentile normalization
 //        .normalizePercentilesGlobal(0.1, 99.8, 10) // Convenience global percentile normalization. arguments are percentileMin, percentileMax, dowsample.
         .pixelSize(originalPixelSize)              // Resolution for detection
-        .tileSize(3500)                // If your GPU can take it, make larger tiles to process fewer of them. Useful for Omnipose
+        .tileSize(2000)                // If your GPU can take it, make larger tiles to process fewer of them. Useful for Omnipose
 //        .diameter(60)                // Average diameter of objects in px (at the requested pixel size)
-        .cellExpansion(2.5)          // Approximate cells based upon nucleus expansion
-//        .cellConstrainScale(1.5)     // Constrain cell expansion using nucleus size
+        .cellExpansion(10)          // Approximate cells based upon nucleus expansion
+        .cellConstrainScale(5)     // Constrain cell expansion using nucleus size
 //        .excludeEdges()                // Clears objects toutching the edge of the image (Not of the QuPath ROI)
         .setOverlap(250)                // Overlap between tiles (in pixels) that the QuPath Cellpose Extension will extract. Defaults to 2x the diameter or 60 px if the diameter is set to 0
 //        .addParameter("exclude_on_edges")      // Discard masks which touch edges of image
