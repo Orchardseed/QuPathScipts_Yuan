@@ -42,8 +42,8 @@ def cellpose = Cellpose2D.builder(pathModel)
                 ColorTransforms.createColorDeconvolvedChannel(imageData.getColorDeconvolutionStains(), 1),
                 ColorTransforms.createColorDeconvolvedChannel(imageData.getColorDeconvolutionStains(), 2),
         )
-//        .preprocess(new AddChannelsOp(),
-//        )
+        .preprocess(new AddChannelsOp(),
+        )
         .normalizePercentiles(1, 99) // Percentile normalization
 //        .normalizePercentilesGlobal(0.1, 99.8, 10) // Convenience global percentile normalization. arguments are percentileMin, percentileMax, dowsample.
         .pixelSize(originalPixelSize)              // Resolution for detection
