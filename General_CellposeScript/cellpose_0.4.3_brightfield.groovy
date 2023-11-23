@@ -29,10 +29,9 @@ def server = imageData.getServer()
 def originalPixelSize = server.getPixelCalibration().getAveragedPixelSizeMicrons()
 def logger = LoggerFactory.getLogger("base script")
 logger.info("The pixelsize is "+originalPixelSize)
-//print(originalPixelSize)
 
 ////// Set image type, if you want to do it manually, please comment out the following 2 lines
-//imageData.setImageType(ImageData.ImageType.BRIGHTFIELD_H_DAB)
+//imageData.setImageType(ImageData.ImageType.BRIGHTFIELD_H_DAB)  //or BRIGHTFIELD_H_E
 //def myStain = ColorDeconvolutionStains.parseColorDeconvolutionStainsArg('{"Name" : "H-DAB modified", "Stain 1" : "Hematoxylin", "Values 1" : "0.81349098 0.57214624 0.10431251", "Stain 2" : "DAB", "Values 2" : "0.1675769  0.3998422  0.90113495", "Background" : "255 255 255"}')
 //imageData.setColorDeconvolutionStains(myStain)
 
